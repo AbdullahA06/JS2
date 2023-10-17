@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Image Gallery</title>
+    <style>
+      h6 {
+        height: 110px;
+        text-align: center;
+        cursor: pointer;
+      }
+
+      h5 {
+        height: 500px;
+        text-align: center;
+      }
+
+      img {
+        height: 100%;
+        padding: 10px;
+      }
+
+      span {
+        font: bold 36pt comic sans ms;
+      }
+    </style>
+    <script>
+      function initialize() {
+        viewImage = document.getElementById("viewimg");
+        currentImage = "";
+
+        captionElement = document.getElementById("capt");
+        caption = "";
+      }
+
+      function setImage(currImg, cap) {
+        currentImage = currImg;
+        caption = cap;
+
+        display();
+      }
+
+      function display() {
+        viewImage.src = currentImage;
+
+        captionElement.innerHTML = caption;
+      }
+    </script>
+  </head>
+
+  <body onload="initialize();">
+    <h6>
+      <img
+        onclick="setImage('images/aang.jpg', 'Aang');"
+        src="images/aang.jpg"
+      />
+      <img
+        onclick="setImage('images/batman.jpg', 'Batman');"
+        src="images/batman.jpg"
+      />
+      <img onclick="setImage('images/rey.jpg', 'Rey');" src="images/rey.jpg" />
+      <img
+        onclick="setImage('images/indiana jones.jpg', 'Indiana Jones');"
+        src="images/indiana jones.jpg"
+      />
+      <img
+        onclick="setImage('images/uhura.jpg', 'Lieutenant Uhura');"
+        src="images/uhura.jpg"
+      />
+      <img
+        onclick="setImage('images/ripley.jpg', 'Ripley');"
+        src="images/ripley.jpg"
+      />
+      <img
+        onclick="setImage('images/kirk.jpg', 'Captain Kirk');"
+        src="images/kirk.jpg"
+      />
+    </h6>
+    <hr />
+    <h5>
+      <img id="viewimg" src="" /><br />
+      <span id="capt"></span>
+    </h5>
+  </body>
+</html>
